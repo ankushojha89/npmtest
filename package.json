@@ -1,0 +1,27 @@
+{
+  "name": "bulkuploadproject",
+  "version": "1.0.0",
+  "description": "testing nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "ankush ojha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.5",
+    "express-validator": "^4.1.1",
+    "fast-csv": "^2.4.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1",
+    "mongodb": "^2.2.31",
+    "mongoose": "^4.11.12",
+    "multer": "^1.3.0",
+    "trim": "0.0.1"
+  }
+}

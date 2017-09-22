@@ -1,0 +1,80 @@
+ <a class="btn btn-success float-right btn-sm" href="/admin">Go to admin</a>
+ <h1 class="padding20">Edit Employee Details</h1>
+
+ 
+  {{#if errors}}
+    {{#each errors}}   
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    
+  </button>  
+    <strong>{{msg}}</strong>   
+     </div>
+    {{/each}}
+   
+ {{/if}}
+ 
+ {{#if employee}}
+ <form class="row padding20" method="post" action="/admin/edit/{{employee.eid}}" enctype="multipart/form-data"> 
+ 
+ <input type="hidden" name="oldprofileimage" value="{{employee.profileimage}}">
+ <div class="col-lg-10">
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name="name" value="{{employee.name}}" placeholder="Enter Employee name">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="email" name="email" value="{{employee.email}}" placeholder="Enter Email">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="technology" class="col-sm-2 col-form-label">Occupation</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="technology" value="{{employee.technology}}" name="technology" placeholder="Enter Occupation/Skills">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="short_desc" class="col-sm-2 col-form-label">About Employee</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="short_desc" value="{{employee.short_desc}}" name="short_desc" placeholder="Short Description About Employee">
+    </div>
+  </div>
+  
+  <div class="form-group row">
+    <label for="dob" class="col-sm-2 col-form-label">DOB</label>
+    <div class="col-sm-10">
+      <input type="date" class="form-control" id="dob" value="{{employee.dob}}" name="dob" placeholder="Enter Employee DOB">
+    </div>
+  </div>
+    <div class="form-group row">
+    <label for="desc" class="col-sm-2 col-form-label">Profile Image</label>
+    <div class="col-sm-10">
+     <input type="file" class="form-control-file" id="profileimage" name="profileimage">        
+    </div>
+  </div>
+  
+   <div class="form-group row">
+    <label for="desc" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-10">
+     <textarea name="desc" id="desc" class="form-control" placeholder="Full Description About Employee">{{{employee.desc}}}</textarea>      
+    </div>
+  </div>
+     </div>
+      <div class="col-lg-2">      
+    <button type="submit" class="btn btn-lg btn-primary">Update Details</button>   
+    <img class="padding20 figure-img img-fluid rounded" src="/profileimages/{{employee.profileimage}}" alt="{{name}}">
+       <p class="lead text-info text-center">  
+           Uploaded Image 
+       </p>                
+     </div> 
+</form>
+{{else}}
+
+<p class="lead">No employee details founds</p>
+{{/if}}

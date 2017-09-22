@@ -1,0 +1,39 @@
+.padding20{
+    padding: 20px 0;
+}
+
+#employeesTable th, td {
+    text-align: center;
+    vertical-align: middle;
+  word-break: break-all;
+}
+
+.portfolio-item{
+    padding-bottom: 20px;
+}
+
+
+#status {
+    position: fixed;
+    width: 100%;
+    font: bold 1em sans-serif;
+    color: #FFF;
+    padding: 0.5em;
+  }
+  
+  #log {
+    padding: 2.5em 0.5em 0.5em;
+    font: 1em sans-serif;
+  }
+  
+  .online {
+    background: green;
+  }
+  
+  .offline {
+    background: red;
+  }
+
+  .hide {
+    display: none;
+}
